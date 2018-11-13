@@ -17,9 +17,9 @@ class CircleWithPattern(private val sketch: PApplet) {
         sketch.ellipse(0f,0f, radius.toFloat(), radius.toFloat())
 //        innerCirclesOne()
 //        innerCirclesTwo()
-        innerCirclesThree(colourRange, alphaRange)
+//        innerCirclesThree(colourRange, alphaRange)
+        innerCirclesFour()
         angle+= 0.01
-//        Why does incrementing the angle result in the circles rotating at different speeds???
         sketch.popMatrix()
     }
 
@@ -41,10 +41,6 @@ class CircleWithPattern(private val sketch: PApplet) {
         sketch.rotate(angle.toFloat())
         sketch.ellipse(0f, -innerCircleRadius, innerCircleRadius, innerCircleRadius)
         sketch.ellipse(innerCircleRadius, innerCircleRadius/2f, innerCircleRadius, innerCircleRadius)
-        sketch.ellipse(-innerCircleRadius, innerCircleRadius/2f, innerCircleRadius, innerCircleRadius)
-//        sketch.ellipse(0f, -radius/6f-radius/12f, radius/5f, radius/5f)
-//        sketch.ellipse(-radius/6f, radius/6f, radius/5f, radius/5f)
-//        sketch.ellipse(radius/6f, radius/6f, radius/5f, radius/5f)
     }
 
     fun innerCirclesThree(colourRange: Float, alphaRange: Float){
@@ -55,5 +51,22 @@ class CircleWithPattern(private val sketch: PApplet) {
         drawCircle(0f, innerCircleRadius*.75f, 1.5f)
         drawCircle(-innerCircleRadius*.75f, 0f, 1.5f)
         drawCircle(innerCircleRadius*0.75f, 0f, 1.5f)
+    }
+
+    fun innerCirclesFour(){
+        sketch.fill(45f, 85.9f, 100f, 175f)
+        sketch.noStroke()
+        val radFactor = 1.5f
+        sketch.rotate(angle.toFloat())
+        drawCircle(0f, -innerCircleRadius*.75f, radFactor)
+        drawCircle(0f, innerCircleRadius*.75f, radFactor)
+        drawCircle(-innerCircleRadius*.75f, 0f, radFactor)
+        drawCircle(innerCircleRadius*0.75f, 0f, radFactor)
+
+        drawCircle(innerCircleRadius*0.75f, -innerCircleRadius*.75f, radFactor)
+        drawCircle(innerCircleRadius*0.75f, innerCircleRadius*.75f, radFactor)
+        drawCircle(-innerCircleRadius*0.75f, -innerCircleRadius*.75f, radFactor)
+        drawCircle(-innerCircleRadius*0.75f, innerCircleRadius*.75f, radFactor)
+
     }
 }
