@@ -13,12 +13,11 @@ class CircleWithPattern(private val sketch: PApplet) {
     fun display(colourRange: Float, alphaRange: Float){
         sketch.pushMatrix()
         sketch.translate(sketch.width/2f, sketch.height/2f)
-        sketch.ellipse(0f,0f, radius.toFloat(), radius.toFloat())
-        sketch.strokeWeight(1f)
         sketch.stroke(0)
+        sketch.ellipse(0f,0f, radius.toFloat(), radius.toFloat())
 //        innerCirclesOne()
-        innerCirclesTwo()
-//        innerCirclesThree(colourRange, alphaRange)
+//        innerCirclesTwo()
+        innerCirclesThree(colourRange, alphaRange)
         angle+= 0.01
 //        Why does incrementing the angle result in the circles rotating at different speeds???
         sketch.popMatrix()
@@ -49,7 +48,7 @@ class CircleWithPattern(private val sketch: PApplet) {
     }
 
     fun innerCirclesThree(colourRange: Float, alphaRange: Float){
-        sketch.fill(colourRange, 85.9f, 100f, alphaRange)
+        sketch.fill(colourRange, 85.9f, 100f, 175f)
         sketch.noStroke()
         sketch.rotate(angle.toFloat())
         drawCircle(0f, -innerCircleRadius*.75f, 1.5f)
