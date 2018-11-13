@@ -5,6 +5,7 @@ class Main : PApplet() {
         CircleWithPattern(this)
     }
 
+
     init {
        this.runSketch()
     }
@@ -17,6 +18,7 @@ class Main : PApplet() {
 
     override fun setup() {
         colorMode(HSB, 360f)
+//        frameRate(1f)
 
     }
 
