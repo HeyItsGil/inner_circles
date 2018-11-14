@@ -11,9 +11,9 @@ class Main : PApplet() {
     }
 
     override fun settings() {
-        size(640, 480)
-//        fullScreen()
-//        pixelDensity(2)
+//        size(640, 480)
+        fullScreen()
+        pixelDensity(2)
     }
 
     override fun setup() {
